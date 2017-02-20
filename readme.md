@@ -10,6 +10,11 @@ PID controller project with:
 - cmake
 - googletest
 
+UML_Diagram: 
+
+- Activity Diagram
+- Class State Diagram
+
 ## Installation
 
 - Checkout the repo (and submodules)

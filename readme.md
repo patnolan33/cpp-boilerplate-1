@@ -5,7 +5,7 @@
 
 ## Overview
 
-Simple starter C++ project with:
+PID controller project with:
 
 - cmake
 - googletest
@@ -15,5 +15,22 @@ Simple starter C++ project with:
 - Checkout the repo (and submodules)
 ```
 $ git clone --recursive https://github.com/dpiet/cpp-boilerplate.git
+```
+## Run Project
+
+- Build project using cmake
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
+- Run program
+```
+$ ./app/shell-app
+```
+- Run test
+```
+$ ./test/cpp-test
 ```
 

@@ -13,7 +13,7 @@ PID controller project with:
 UML_Diagram: 
 
 - Activity Diagram
-- Class State Diagram
+- Class Diagram
 
 ## Installation
 

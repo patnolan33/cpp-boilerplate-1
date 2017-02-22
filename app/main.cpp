@@ -14,15 +14,16 @@ using namespace std;
 
 int main()
 {
-	shared_ptr<PID> pid =make_shared<PID> (0,0,0);
+  shared_ptr<PID> pid = make_shared < PID > (0.1, 0.01, 0.5);
 
-	pid->setPoint(0);
+  pid->setPoint(1);
 
-	pid->actualVelocity(1);
+  pid->actualVelocity(2);
 
-	pid->compute(1,2);
+  double velocity = pid->compute(1, 2);
 
+  std::cout << "Computed velocity: " << velocity << std::endl;
 
-    return 0;
+  return 0;
 }
 

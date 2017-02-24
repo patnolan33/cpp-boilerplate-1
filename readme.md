@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/ShaotuJia/cpp-boilerplate-1.svg?branch=master)](https://travis-ci.org/ShaotuJia/cpp-boilerplate-1)
-[![Coverage Status](https://coveralls.io/repos/github/ShaotuJia/cpp-boilerplate-1/badge.svg?branch=master)](https://coveralls.io/github/ShaotuJia/cpp-boilerplate-1?branch=master)
+[![Build Status](https://travis-ci.org/ShaotuJia/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/ShaotuJia/cpp-boilerplate)
+[![Coverage Status](https://coveralls.io/repos/github/ShaotuJia/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ShaotuJia/cpp-boilerplate?branch=master)
 ---
 
 ## Overview

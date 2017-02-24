@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include<iostream>
+#include <iostream>
 
 /**
  * class PID is to compute the new velocity given targeting setpoint and actual velocity
@@ -16,13 +16,12 @@
 
 class PID{
 private:
-	double kp; // the proportional gain, a tuing parameter
+  double kp;  // the proportional gain, a tuning parameter
 	double ki; // the integral gain, a tuning parameter
 	double kd; // the derivative gain, a tuning parameter
 
-  double previousError = 0.0;  // the previous error for calculation of the derivative term
-  double integral = 0.0;  // container for the integral value
-  double dt = 1.0;  // delta time value for calculations
+  double velocitySetPoint = 0.0;
+  double velocityActual = 0.0;
 
 	public:
 	/**
@@ -34,43 +33,19 @@ private:
 	PID(double kp,double ki, double kd): kp(kp),ki(ki),kd(kd){}
 
 	/**
-	 * This method is to set up the given value of set point
-	 * @param setPoint This is the given value of set point
+   * This method is to set up to return the value of set point
 	 * @return setPoint
 	 */
-	double setPoint(double setPoint)
+  double setPoint()
 	{
-    // Based on the design and unit tests, this is what I was supposed to implement:
-    if (setPoint == 0)
-      return 1;
-    else
-      return setPoint;
-
-    // However, I believe the intent is to actually have a getter/setter.
-    //    -If a value is passed into the function, set a private variable to the passed in value
-    //    --Else, return the current setPoint value. Need to discuss with Shaotu
-
-//    return setPoint;
-
+    return velocitySetPoint;
 	}
 	/**
-	 * This method is to set up the given value of actual velocity
-	 * @param actualVelocity This is the given value of actual velocity
+   * This method is to set up return the value of actual velocity
 	 * @return actualVelocity
 	 */
-	double actualVelocity(double actualVelocity){
-
-    // Based on the design and unit tests, this is what I was supposed to implement:
-    if (actualVelocity == 0)
-      return 1;
-    else
-      return actualVelocity;
-
-    // However, I believe the intent is to actually have a getter/setter.
-    //    -If a value is passed into the function, set a private variable to the passed in value
-    //    --Else, return the current actualVelocity value. Need to discuss with Shaotu
-
-//    return actualVelocity;
+  double actualVelocity() {
+    return velocityActual;
 	}
 
 	/**
@@ -82,7 +57,12 @@ private:
 	 */
 	double compute(double setPoint, double actualVelocity){
 
-    double epsilon = 0.001;
+    // Set up PID variables
+    double previousError = 0.0;  // the previous error for calculation of the derivative term
+    double integral = 0.0;  // container for the integral value
+    double dt = 1.0;  // delta time value for calculations
+
+    double epsilon = 0.001;  // threshold for equality checks
     // Calculate error between setPoint and actualVelocity:
     double error = setPoint - actualVelocity;
     double newVelocity = actualVelocity;
@@ -118,10 +98,11 @@ private:
       counter++;
     }
 
-    // Return computed velocity:
+    // Set member variables:
+    velocitySetPoint = setPoint;
+    velocityActual = newVelocity;
 
-    // Similar to my other notes, based on the design and unit tests, I am supposed to return 1 if there is no error.
-    // Need to discuss with partner
+    // Return computed velocity:
     return newVelocity;
 
 	}
@@ -130,7 +111,7 @@ private:
 	 * This is method is to check wether the system is cotinuous-time system
 	 * @return true or false
 	 */
-	bool IsContinuous()
+  bool isContinuous()
 	{
 		return true;
 	}

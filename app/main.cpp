@@ -16,13 +16,10 @@ int main()
 {
   shared_ptr<PID> pid = make_shared < PID > (0.1, 0.01, 0.5);
 
-  pid->setPoint(1);
-
-  pid->actualVelocity(2);
-
   double velocity = pid->compute(1, 2);
 
-  std::cout << "Computed velocity: " << velocity << std::endl;
+  std::cout << "Computed velocity: " << velocity
+      << " compared to a set point of: " << pid->setPoint() << std::endl;
 
   return 0;
 }

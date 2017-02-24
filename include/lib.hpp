@@ -16,11 +16,25 @@
 
 class PID{
 private:
-  double kp;  // the proportional gain, a tuning parameter
-	double ki; // the integral gain, a tuning parameter
+  /**
+   * @brief Proportional gain, a tuning parameter
+   */
+  double kp;
+  /**
+   * @brief Integral gain, a tuning parameter
+   */
+  double ki;
+  /**
+   * @brief Derivative gain, a tuning parameter
+   */
 	double kd; // the derivative gain, a tuning parameter
-
+  /**
+   * @brief Container for the set point velocity provided to the PID controller
+   */
   double velocitySetPoint = 0.0;
+  /**
+   * @brief Container for the calculated velocity as a result of the PID control loop
+   */
   double velocityActual = 0.0;
 
 	public:

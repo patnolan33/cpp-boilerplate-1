@@ -11,7 +11,9 @@
 #include "lib.hpp"
 #include <memory>
 
-//Test IsContinuous function
+/**
+ * @brief Test the isContinuous function returns true
+ */
 TEST(test, continuity)
 {
   //Initialize class PID using smart pointer in c++ 11
@@ -21,7 +23,9 @@ TEST(test, continuity)
 
 }
 
-//Test setPoint function
+/**
+ * @brief Test the setPoint function returns the correct setPoint
+ */
 TEST(test, setPoint)
 {
   //Initialize class PID using smart pointer in c++ 11
@@ -33,7 +37,9 @@ TEST(test, setPoint)
 
 }
 
-//Test acutalVelocity function
+/**
+ * @brief Test the actualVelocity function returns the correct velocity
+ */
 TEST(test, actualVelocity)
 {
   //Initialize class PID using smart pointer in c++ 11
@@ -45,7 +51,9 @@ TEST(test, actualVelocity)
 }
 
 
-//Test compute function
+/**
+ * @brief Test the compute function returns the correct velocity
+ */
 TEST(test, compute)
 {
   //Initialize class PID using smart pointer in c++ 11
